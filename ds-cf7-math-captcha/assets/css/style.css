@@ -1,0 +1,6 @@
+#dscf7_refresh_captcha {
+    display: inline-block;
+}
+.dscf7captcha input.wpcf7-form-control {
+    width: 200px;
+}

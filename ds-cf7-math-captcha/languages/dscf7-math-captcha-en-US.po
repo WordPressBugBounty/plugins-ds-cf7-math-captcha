@@ -1,0 +1,2 @@
+msgid "Type your answer"
+msgstr "Text Area"
