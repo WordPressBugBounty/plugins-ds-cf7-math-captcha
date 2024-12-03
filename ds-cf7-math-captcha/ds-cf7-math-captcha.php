@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: DS CF7 Math Captcha
-Version: 3.0.1
+Version: 3.0.2
 Author: Dotsquares WPTeam
 Author URI: https://www.dotsquares.com
 Description: To prevent spam emails, adding a math captcha is a useful strategy. .
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define the version number for the DS CF7 Math Captcha plugin
-define( 'DSCF7_VERSION', '3.0.1' );
+define( 'DSCF7_VERSION', '3.0.2' );
 
 
 // Define the required WordPress version for the DS CF7 Math Captcha plugin
@@ -172,15 +172,15 @@ function dscf7_captcha_validation( $result, $tag ) {
     // Check if the tag type is 'dscf7captcha'
     if( $tag->type == 'dscf7captcha' ) {
         
-        if ( isset( $_POST['_wpnonce_ds_cf7_math_captcha'] ) ) {
-            // Remove slashes first
-            $nonce = sanitize_text_field(wp_unslash( $_POST['_wpnonce_ds_cf7_math_captcha'] ));
-        
-            // Verify nonce after unslashing
-            if (  wp_verify_nonce( $nonce, 'ds_cf7_math_captcha' ) ) {
-                // You can use this message or any custom message here
-                $result->invalidate( $tag, esc_html__( 'Nonce verification failed. Please try again.', 'ds-cf7-math-captcha' ) );
-                return $result; // Stop further processing if nonce is invalid
+        // Ensure nonce is sanitized properly
+        if (isset($_POST['ds_cf7_nonce'])) {
+            $nonce = sanitize_text_field(wp_unslash($_POST['ds_cf7_nonce'])); // Unsplash first, then sanitize
+            if ( wp_verify_nonce($nonce, 'ds_cf7_math_captcha') ) {
+                // Verify nonce after unslashing
+                if ( ! wp_verify_nonce( $nonce, 'ds_cf7_math_captcha' ) ) {
+                    $result->invalidate( $tag, esc_html__( 'Nonce verification failed. Please try again.', 'ds-cf7-math-captcha' ) );
+                    return $result; // Stop further processing if nonce is invalid
+                }
             }
         }
         
@@ -246,7 +246,7 @@ function dscf7_captcha_handler( $tag )
     $actnVal1_escaped = esc_attr($actnVal1);
     $actnVal2_escaped = esc_attr($actnVal2);
     $random_actionVal_escaped = esc_attr($random_actionVal);
-    $nonce = wp_create_nonce('ds_cf7_math_captcha');
+    $nonce = wp_create_nonce('ds_cf7_nonce');
     $nonce_escaped = esc_attr($nonce);
     $captcha_icon_url = esc_url(DSCF7_PLUGIN_URL . '/assets/img/icons8-refresh-30.png');
     $captcha_reload_icon_url = esc_url(DSCF7_PLUGIN_URL . '/assets/img/446bcd468478f5bfb7b4e5c804571392_w200.gif');
@@ -272,7 +272,7 @@ function dscf7_captcha_handler( $tag )
     $ds_cf7_captcha .= '<input type="text" aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" size="5" value="" name="' . esc_attr($tag->name) . '" placeholder="' . esc_attr__('Type your answer', 'ds-cf7-math-captcha') . '" style="width:200px; margin-bottom:10px;" oninput="this.value = this.value.replace(/[^0-9.]/g, \'\').replace(/(\..*)\./g, \'$1\');"></span>';
     
     // Nonce field
-    $ds_cf7_captcha .= '<input type="hidden" name="_wpnonce_ds_cf7_math_captcha" value="' . $nonce_escaped . '">';
+    $ds_cf7_captcha .= '<input type="hidden" name="ds_cf7_nonce" value="' . $nonce_escaped . '">';
     $ds_cf7_captcha .= '</p>';
 
     // Return the HTML markup for the captcha
@@ -301,7 +301,7 @@ function dscf7_ajaxify_scripts() {
             'ajax_object', 
             array( 
                 'ajax_url' => esc_url( admin_url( 'admin-ajax.php' ) ), 
-                'nonce' => esc_attr( wp_create_nonce( 'ds_cf7_math_captcha' ) )
+                'nonce' => esc_attr( wp_create_nonce( 'ds_cf7_nonce' ) )
             ) 
         );
         
@@ -360,7 +360,8 @@ function dscf7_refreshcaptcha_callback( $tag ) {
     $tagName_escaped = esc_attr($tagName);
     $captcha_icon_url = esc_url(DSCF7_PLUGIN_URL . '/assets/img/icons8-refresh-30.png');
     $captcha_reload_icon_url = esc_url(DSCF7_PLUGIN_URL . '/assets/img/446bcd468478f5bfb7b4e5c804571392_w200.gif');
-
+    $nonce = wp_create_nonce('ds_cf7_nonce');
+    $nonce_escaped = esc_attr($nonce);
     // Construct the captcha HTML
     $ds_cf7_captcha = '<input name="dscf7_hidden_val1-' . $tagName_escaped . '" id="dscf7_hidden_val1-' . $tagName_escaped . '" type="hidden" value="' . $actnVal1_escaped . '" />';
     $ds_cf7_captcha .= '<input name="dscf7_hidden_val2-' . $tagName_escaped . '" id="dscf7_hidden_val2-' . $tagName_escaped . '" type="hidden" value="' . $actnVal2_escaped . '" />';
@@ -373,6 +374,7 @@ function dscf7_refreshcaptcha_callback( $tag ) {
     $ds_cf7_captcha .= '</a><br>';
     $ds_cf7_captcha .= '<span class="wpcf7-form-control-wrap" data-name="' . $tagName_escaped . '">';
     $ds_cf7_captcha .= '<input type="text" aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" size="5" value="" name="' . $tagName_escaped . '" placeholder="' . esc_attr__('Type your answer', 'ds-cf7-math-captcha') . '" style="width:200px;margin-bottom:10px;" oninput="this.value = this.value.replace(/[^0-9.]/g, \'\').replace(/(\..*)\./g, \'$1\');">';
+    $ds_cf7_captcha .= '<input type="hidden" name="ds_cf7_nonce" value="' . $nonce_escaped . '">';
     $ds_cf7_captcha .= '</span>';
 
     // Define allowed HTML
@@ -414,14 +416,18 @@ function dscf7_refreshcaptcha_callback( $tag ) {
     );
 
     // Check nonce for security
-    if ( isset( $_POST['_wpnonce_ds_cf7_math_captcha'] ) ) {
-        $nonce = sanitize_text_field(wp_unslash($_POST['_wpnonce_ds_cf7_math_captcha']));
-
+    if ( isset( $_POST['ds_cf7_nonce'] ) ) {
+        $nonce = sanitize_text_field(wp_unslash($_POST['ds_cf7_nonce'])); // Sanitize and unslash
         // Verify nonce after unslashing
-        if ( wp_verify_nonce( $nonce, 'ds_cf7_math_captcha' ) ) {
+        if ( wp_verify_nonce( $nonce, 'ds_cf7_nonce' ) ) {
+            // Correct nonce, process further
             echo wp_kses( $ds_cf7_captcha, $allowed_html );
+        } else {
+            // Nonce verification failed
+            echo 'Nonce verification failed';
         }
     }
+    
 
     exit;
 }
@@ -485,4 +491,3 @@ function wpcf7_tag_generator_dsmathcaptcha( $contact_form, $args = '' ) {
 </div>
 <?php
 }
-
