@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: DS CF7 Math Captcha
-Version: 3.0.2
+Version: 3.0.3
 Author: Dotsquares WPTeam
 Author URI: https://www.dotsquares.com
 Description: To prevent spam emails, adding a math captcha is a useful strategy. .
@@ -16,11 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define the version number for the DS CF7 Math Captcha plugin
-define( 'DSCF7_VERSION', '3.0.2' );
+define( 'DSCF7_VERSION', '3.0.3' );
 
 
 // Define the required WordPress version for the DS CF7 Math Captcha plugin
-define( 'DSCF7_REQUIRED_WP_VERSION', '6.3.1' );
+define( 'DSCF7_REQUIRED_WP_VERSION', '6.5' );
 
 
 // Define the plugin file path
@@ -45,7 +45,6 @@ add_action( 'wpcf7_init', 'dscf7_capctha' );
 /**check validation filter */	
 add_filter( 'wpcf7_validate_dscf7captcha', 'dscf7_captcha_validation', 10, 2 );
 
-//add_filter( 'wpcf7_validate_dscf7captcha*', 'dscf7_captcha_validation', 10, 2 );
 add_action( 'wp_enqueue_scripts', 'dscf7_ajaxify_scripts' );
 
 /**ajax callback handler */
@@ -78,12 +77,8 @@ function dscf7_deactivate_on_cf7_deactivation()
         // Add an admin notice to inform the user
         add_action('admin_notices', 'dscf7_plugin_contact_form7_notice');
         // Add more actions or custom notices if needed
-        
-        // Deactivate the plugin (if needed)
-        //deactivate_plugins( plugin_basename( DSCF7_PLUGIN ) );
     }
 }
-
 
 /**
  * Function to display notice when Contact Form 7 is not activated.
@@ -136,7 +131,6 @@ function dscf7_wpcf7_messages_callback($messages)
 
     return $messages;
 }
-
 
 /**translation load file .po/.mo and language folder */
 function wpcf7sr_load_textdomain() {
@@ -222,7 +216,6 @@ function dscf7_captcha_validation( $result, $tag ) {
     return $result;
 }
 
-
 /**
  * Handler function for the DS CF7 Math Captcha form tag.
  *
@@ -258,17 +251,18 @@ function dscf7_captcha_handler( $tag )
     $ds_cf7_captcha .= '<input name="dscf7_hidden_action-' . esc_attr($tag->name) . '" id="dscf7_hidden_action-' . esc_attr($tag->name) . '" type="hidden" value="' . $random_actionVal_escaped . '" />';
 
     // Question text with sanitized values
-    $ds_cf7_captcha .= 'What is <span class="cf7as-firstAct">' . esc_html($actnVal2) . '</span> ';
+    $ds_cf7_captcha .= '<span class="dscf7_lt">'.esc_attr__('What is', 'ds-cf7-math-captcha').' <span class="cf7as-firstAct">' . esc_html($actnVal2) . '</span> ';
+    
     $ds_cf7_captcha .= esc_html($random_actionVal) . ' <span class="cf7as-firstAct">' . esc_html($actnVal1) . '</span>?';
 
     // Refresh button
     $ds_cf7_captcha .= ' <a href="javascript:void(0)" id="' . esc_attr($tag->name) . '" class="dscf7_refresh_captcha">';
     $ds_cf7_captcha .= '<img class="dscf7_captcha_icon" src="' . $captcha_icon_url . '"/>';
     $ds_cf7_captcha .= '<img class="dscf7_captcha_reload_icon" src="' . $captcha_reload_icon_url . '" style="display:none; width:30px" />';
-    $ds_cf7_captcha .= '</a>';
+    $ds_cf7_captcha .= '</a></span><br>';
 
     // Answer input field
-    $ds_cf7_captcha .= '<br><span class="wpcf7-form-control-wrap" data-name="' . esc_attr($tag->name) . '">';
+    $ds_cf7_captcha .= '<span class="wpcf7-form-control-wrap" data-name="' . esc_attr($tag->name) . '">';
     $ds_cf7_captcha .= '<input type="text" aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" size="5" value="" name="' . esc_attr($tag->name) . '" placeholder="' . esc_attr__('Type your answer', 'ds-cf7-math-captcha') . '" style="width:200px; margin-bottom:10px;" oninput="this.value = this.value.replace(/[^0-9.]/g, \'\').replace(/(\..*)\./g, \'$1\');"></span>';
     
     // Nonce field
@@ -278,8 +272,6 @@ function dscf7_captcha_handler( $tag )
     // Return the HTML markup for the captcha
     return $ds_cf7_captcha;
 }
-
-
 
 /**
  * Enqueue scripts and styles for DS CF7 Math Captcha plugin.
@@ -366,12 +358,12 @@ function dscf7_refreshcaptcha_callback( $tag ) {
     $ds_cf7_captcha = '<input name="dscf7_hidden_val1-' . $tagName_escaped . '" id="dscf7_hidden_val1-' . $tagName_escaped . '" type="hidden" value="' . $actnVal1_escaped . '" />';
     $ds_cf7_captcha .= '<input name="dscf7_hidden_val2-' . $tagName_escaped . '" id="dscf7_hidden_val2-' . $tagName_escaped . '" type="hidden" value="' . $actnVal2_escaped . '" />';
     $ds_cf7_captcha .= '<input name="dscf7_hidden_action-' . $tagName_escaped . '" id="dscf7_hidden_action-' . $tagName_escaped . '" type="hidden" value="' . $random_actionVal_escaped . '" />';
-    $ds_cf7_captcha .= 'What is <span class="cf7as-firstAct">' . esc_html($actnVal2) . '</span> ';
+    $ds_cf7_captcha .= '<span class="dscf7_lt">'.esc_attr__('What is', 'ds-cf7-math-captcha').' <span class="cf7as-firstAct">' . esc_html($actnVal2) . '</span> ';
     $ds_cf7_captcha .= esc_html($random_actionVal) . ' <span class="cf7as-firstAct">' . esc_html($actnVal1) . '</span>? ';
     $ds_cf7_captcha .= '<a href="javascript:void(0)" id="' . $tagName_escaped . '" class="dscf7_refresh_captcha">';
     $ds_cf7_captcha .= '<img class="dscf7_captcha_icon" src="' . $captcha_icon_url . '"/>';
     $ds_cf7_captcha .= '<img class="dscf7_captcha_reload_icon" src="' . $captcha_reload_icon_url . '" style="display:none; width:30px" />';
-    $ds_cf7_captcha .= '</a><br>';
+    $ds_cf7_captcha .= '</a></span><br>';
     $ds_cf7_captcha .= '<span class="wpcf7-form-control-wrap" data-name="' . $tagName_escaped . '">';
     $ds_cf7_captcha .= '<input type="text" aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" size="5" value="" name="' . $tagName_escaped . '" placeholder="' . esc_attr__('Type your answer', 'ds-cf7-math-captcha') . '" style="width:200px;margin-bottom:10px;" oninput="this.value = this.value.replace(/[^0-9.]/g, \'\').replace(/(\..*)\./g, \'$1\');">';
     $ds_cf7_captcha .= '<input type="hidden" name="ds_cf7_nonce" value="' . $nonce_escaped . '">';
@@ -431,7 +423,6 @@ function dscf7_refreshcaptcha_callback( $tag ) {
 
     exit;
 }
-
 
 /**
  * Adds the tag generator for the DS CF7 Math Captcha to Contact Form 7.
