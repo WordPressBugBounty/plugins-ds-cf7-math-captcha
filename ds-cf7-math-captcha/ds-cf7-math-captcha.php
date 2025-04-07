@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: DS CF7 Math Captcha
-Version: 3.0.3
+Version: 3.0.4
 Author: Dotsquares WPTeam
 Author URI: https://www.dotsquares.com
 Description: To prevent spam emails, adding a math captcha is a useful strategy. .
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define the version number for the DS CF7 Math Captcha plugin
-define( 'DSCF7_VERSION', '3.0.3' );
+define( 'DSCF7_VERSION', '3.0.4' );
 
 
 // Define the required WordPress version for the DS CF7 Math Captcha plugin
