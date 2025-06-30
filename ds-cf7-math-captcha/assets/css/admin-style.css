@@ -1,3 +1,1 @@
-form.tag-generator-panel {height: max-content;}
-
-.tag-generator-dialog {min-height: max-content;overflow-x: hidden;padding: 10px 15px 20px;}
+form.tag-generator-panel{height:max-content}.tag-generator-dialog{min-height:max-content;overflow-x:hidden;padding:30px;max-height:max-content}dialog#tag-generator-panel-dscf7captcha fieldset{margin:0}dialog#tag-generator-panel-dscf7captcha .insert-box{display:flex;gap:10px}dialog#tag-generator-panel-dscf7captcha input.tag.code{width:100%}

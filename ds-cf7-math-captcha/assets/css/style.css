@@ -1,6 +1,1 @@
-#dscf7_refresh_captcha {
-    display: inline-block;
-}
-.dscf7captcha input.wpcf7-form-control {
-    width: 200px;
-}
+#dscf7_refresh_captcha{display:inline-block}img.dscf7_captcha_reload_icon{display:none}.dscf7-captcha-container *{box-sizing:border-box}.dscf7-captcha-container .wpcf7-not-valid-tip{font-size:16px;margin-top:5px}.dscf7-captcha-container{width:240px;background:#f7f7f7;border-radius:10px;padding:15px}.dscf7-captcha-container span.dscf7_lt{display:block;position:relative;font-size:18px}.dscf7-captcha-container span.dscf7_lt .dscf7_refresh_captcha{position:absolute;right:0;top:0;display:flex;align-items:center;justify-content:center;width:25px}.dscf7-captcha-container span.dscf7_lt .dscf7_refresh_captcha img{width:100%}.dscf7-captcha-container span.wpcf7-form-control-wrap{width:100%;display:block}.dscf7-captcha-container span.wpcf7-form-control-wrap input{width:100%;box-sizing:border-box;height:30px;padding:10px;border-radius:5px;border:1px solid #eee;margin-top:10px}

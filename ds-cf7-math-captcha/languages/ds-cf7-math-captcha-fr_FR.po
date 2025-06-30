@@ -1,0 +1,98 @@
+# Copyright (C) 2025 Dotsquares WPTeam
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: DS CF7 Math Captcha 3.0.4\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ds-cf7-math-"
+"captcha\n"
+"POT-Creation-Date: 2025-06-03T11:55:59+02:00\n"
+"PO-Revision-Date: 2025-06-03 15:37+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+"X-Domain: ds-cf7-math-captcha\n"
+
+#. Plugin Name of the plugin
+#: D:\xampp\htdocs\clendly\wp-content\plugins\ds-cf7-math-captcha\ds-cf7-math-captcha.php
+msgid "DS CF7 Math Captcha"
+msgstr ""
+
+#. Description of the plugin
+#: D:\xampp\htdocs\clendly\wp-content\plugins\ds-cf7-math-captcha\ds-cf7-math-captcha.php
+msgid "To prevent spam emails, adding a math captcha is a useful strategy."
+msgstr "Pour éviter les spams, ajouter un captcha mathématique est une étape utile."
+
+
+#. Author of the plugin
+#: D:\xampp\htdocs\clendly\wp-content\plugins\ds-cf7-math-captcha\ds-cf7-math-captcha.php
+msgid "Dotsquares WPTeam"
+msgstr "Équipe WP Dotsquares"
+
+#. Author URI of the plugin
+#: D:\xampp\htdocs\clendly\wp-content\plugins\ds-cf7-math-captcha\ds-cf7-math-captcha.php
+msgid "https://www.dotsquares.com"
+msgstr "https://www.dotsquares.com"
+
+#: ds-cf7-math-captcha.php:90
+msgid ""
+"Warning: DS CF7 Math Captcha plugin requires Contact Form 7 to be installed "
+"and active."
+msgstr ""
+"Attention : Le plugin DS CF7 Math Captcha nécessite que Contact Form 7 soit "
+"installé et activé."
+
+#: ds-cf7-math-captcha.php:109 ds-cf7-math-captcha.php:117
+msgid "Incorrect captcha!"
+msgstr "Captcha incorrect !"
+
+#: ds-cf7-math-captcha.php:113 ds-cf7-math-captcha.php:123
+msgid "Please enter captcha."
+msgstr "Veuillez saisir le captcha."
+
+#: ds-cf7-math-captcha.php:169
+msgid "Nonce verification failed. Please try again."
+msgstr "Échec de la vérification du nonce. Veuillez réessayer."
+
+#: ds-cf7-math-captcha.php:198
+msgid "Please enter Captcha."
+msgstr "Veuillez saisir le captcha."
+
+#: ds-cf7-math-captcha.php:204
+msgid "Incorrect Captcha!"
+msgstr "Captcha incorrect !"
+
+#: ds-cf7-math-captcha.php:262 ds-cf7-math-captcha.php:366
+msgid "What is"
+msgstr "French: Quelle est"
+
+#: ds-cf7-math-captcha.php:274 ds-cf7-math-captcha.php:373
+msgid "Type your answer"
+msgstr "Tapez votre réponse"
+
+#: ds-cf7-math-captcha.php:443
+msgid "math-captcha"
+msgstr ""
+
+#: ds-cf7-math-captcha.php:463
+msgid "Copy the given shortcode in the form, see %s."
+msgstr ""
+
+#: ds-cf7-math-captcha.php:473
+msgid "Name"
+msgstr ""
+
+#: ds-cf7-math-captcha.php:481
+msgid "Class"
+msgstr ""
+
+#: ds-cf7-math-captcha.php:485
+msgid "Enter a custom class for the CAPTCHA field (optional)."
+msgstr ""
+
+#: ds-cf7-math-captcha.php:495
+msgid "Insert Tag"
+msgstr ""
