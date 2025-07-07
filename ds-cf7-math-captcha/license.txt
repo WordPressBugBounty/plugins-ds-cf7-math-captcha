@@ -1,7 +1,7 @@
 DS CF7 Math Captcha
 ==============================
 
-Version: 3.0.5
+Version: 3.0.6
 Author: dotsvijay
 Author URI: https://www.dotsquares.com
 

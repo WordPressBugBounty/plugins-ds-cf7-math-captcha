@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: DS CF7 Math Captcha
-Version: 3.0.5
+Version: 3.0.6
 Author: Dotsquares WPTeam
 Author URI: https://www.dotsquares.com
 Description: To prevent spam emails, adding a math captcha is a useful strategy. .
@@ -117,11 +117,11 @@ function dscf7_wpcf7_messages_callback( $messages ) {
         $custom_value = get_post_meta( $form_id, '_messages', true );
         $dynami_err_message = isset( $custom_value['invalid_letters_digits'] ) && ! empty( $custom_value['invalid_letters_digits'] ) 
             ? esc_html( $custom_value['invalid_letters_digits'] ) 
-            : __( 'Incorrect captcha!', 'ds-cf7-math-captcha' );
+            : esc_html__( 'Incorrect captcha!', 'ds-cf7-math-captcha' );
         
         $please_enter_capthca = isset( $custom_value['invalid_letters'] ) && ! empty( $custom_value['invalid_letters'] ) 
             ? esc_html( $custom_value['invalid_letters'] ) 
-            : __( 'Please enter captcha.', 'ds-cf7-math-captcha' );
+            : esc_html__( 'Please enter captcha.', 'ds-cf7-math-captcha' );
         
         if ( ! empty( $dynami_err_message ) ) {
             $messages['invalid_letters_digits'] = [
@@ -173,7 +173,7 @@ function dscf7_captcha_validation( $result, $tag ) {
     // Check if the tag type is 'dscf7captcha'
     if ( $tag->type == 'dscf7captcha' ) {
         if (isset($_POST['ds_cf7_nonce'])) {
-                $nonce = sanitize_text_field(wp_unslash($_POST['ds_cf7_nonce'])); // Unsplash first, then sanitize
+ $nonce = sanitize_text_field(wp_unslash($_POST['ds_cf7_nonce'])); // Unsplash first, then sanitize
                 if ( wp_verify_nonce($nonce, 'ds_cf7_nonce') ) {
                     // Verify nonce after unslashing
                     if ( ! wp_verify_nonce( $nonce, 'ds_cf7_nonce' ) ) {
@@ -259,15 +259,17 @@ function dscf7_captcha_handler( $tag ) {
     $actnVal2_escaped = esc_attr( $actnVal2 );
     $random_actionVal_escaped = esc_attr( $random_actionVal );
     $nonce = wp_create_nonce( 'ds_cf7_nonce' );
-    $nonce_escaped = esc_attr( $nonce );
+ $nonce_escaped = $nonce;
+
     $captcha_icon_url = esc_url( DSCF7_PLUGIN_URL . '/assets/img/icons8-refresh-30.png' );
     $captcha_reload_icon_url = esc_url( DSCF7_PLUGIN_URL . '/assets/img/446bcd468478f5bfb7b4e5c804571392_w200.gif' );
 
-    // Generate the question text for label and aria-label
-    $question_text = esc_attr__('What is ', 'ds-cf7-math-captcha') . $actnVal2 . ' ' . $random_actionVal . ' ' . $actnVal1 . '?';
+    // Translators: %1$d and %3$d are numbers, %2$s is the math operator (+, -, etc.).
 
-    $answer_label = esc_attr__('Answer for ', 'ds-cf7-math-captcha') . $actnVal2 . ' ' . $random_actionVal . ' ' . $actnVal1;
+    $question_text = sprintf( esc_html__( 'What is %1$d %2$s %3$d ?', 'ds-cf7-math-captcha' ), $actnVal2, $random_actionVal, $actnVal1 );
 
+    // Translators: %1$d and %3$d are random numbers, %2$s is the math operator (+, -, etc.).
+    $answer_label = sprintf( esc_html__( 'Answer for %1$d %2$s %3$d', 'ds-cf7-math-captcha' ), $actnVal2, $random_actionVal, $actnVal1 );
 
     // Build the HTML markup for the captcha with accessibility improvements
     $ds_cf7_captcha = '<div class="dscf7-captcha-container">';
@@ -277,7 +279,7 @@ function dscf7_captcha_handler( $tag ) {
 
     // Question with refresh button
     $ds_cf7_captcha .= '<div class="dscf7-question-container">';
-    $ds_cf7_captcha .= '<span class="dscf7_lt">' . esc_html($question_text) . ' ';
+    $ds_cf7_captcha .= '<span class="dscf7_lt">' . $question_text . ' ';
     $ds_cf7_captcha .= '<a href="javascript:void(0)" id="' . esc_attr( $tag->name ) . '" class="dscf7_refresh_captcha" aria-label="' . esc_attr__('Refresh captcha', 'ds-cf7-math-captcha') . '">';
     // phpcs:ignore PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
     $ds_cf7_captcha .= '<img class="dscf7_captcha_icon" src="' . esc_url( $captcha_icon_url ) . '" alt="' . esc_attr__('Refresh icon', 'ds-cf7-math-captcha') . '"/>';
@@ -375,13 +377,13 @@ function dscf7_refreshcaptcha_callback( $tag ) {
     $captcha_icon_url = esc_url( DSCF7_PLUGIN_URL . '/assets/img/icons8-refresh-30.png' );
     $captcha_reload_icon_url = esc_url( DSCF7_PLUGIN_URL . '/assets/img/446bcd468478f5bfb7b4e5c804571392_w200.gif' );
     $nonce = wp_create_nonce( 'ds_cf7_nonce' );
-    $nonce_escaped = esc_attr( $nonce );
+ $nonce_escaped = $nonce;
 
-    // Generate the question text for label and aria-label
-    $question_text = esc_attr__('What is', 'ds-cf7-math-captcha') . ' ' . $actnVal2 . ' ' . $random_actionVal . ' ' . $actnVal1 . '?';
+    // Translators: %1$d and %3$d are numbers, %2$s is the math operator (+, -, etc.).
+    $question_text = sprintf( esc_html__( 'What is %1$d %2$s %3$d ?', 'ds-cf7-math-captcha' ), $actnVal2, $random_actionVal, $actnVal1 );
 
-    $answer_label = esc_attr__('Answer for', 'ds-cf7-math-captcha') . ' ' . $actnVal2 . ' ' . $random_actionVal . ' ' . $actnVal1;
-
+    // Translators: %1$d and %3$d are random numbers, %2$s is the math operator (+, -, etc.).
+    $answer_label = sprintf( esc_html__( 'Answer for %1$d %2$s %3$d', 'ds-cf7-math-captcha' ), $actnVal2, $random_actionVal, $actnVal1 );
 
     // Construct the captcha HTML with accessibility improvements
     $ds_cf7_captcha = '<div class="dscf7-captcha-container">';
@@ -486,7 +488,7 @@ function wpcf7_add_tag_generator_dsmathcaptcha() {
         // 'version' => 2 
     );
     // Add the tag generator for the 'dscf7captcha' tag
-    $tag_generator->add( 'dscf7captcha', __( 'math-captcha', 'ds-cf7-math-captcha' ), 'wpcf7_tag_generator_dsmathcaptcha', array( 'version' => 2 ) );
+    $tag_generator->add( 'dscf7captcha', esc_html__( 'math-captcha', 'ds-cf7-math-captcha' ), 'wpcf7_tag_generator_dsmathcaptcha', array( 'version' => 2 ) );
 }
 
 // Hook the function to the 'wpcf7_admin_init' action with a priority of 65 and no parameters
@@ -506,7 +508,7 @@ function wpcf7_tag_generator_dsmathcaptcha( $contact_form, $args = '' ) {
     // Check if the type is 'dscf7captcha'
     if ( 'dscf7captcha' == $type ) {
         // Set the description for the tag generator
-        $description = esc_html( sprintf( 'Copy the given shortcode in the form, see %s.', 'ds-cf7-math-captcha' ), 'ds-cf7-math-captcha' );
+        $description = esc_html__('Copy the given shortcode in the form.', 'ds-cf7-math-captcha');
     } 
 
     ?>

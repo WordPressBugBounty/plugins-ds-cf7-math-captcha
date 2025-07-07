@@ -45,6 +45,9 @@ To add the mathcaptcha you can find the tag 'Mathcaptcha' when you will create n
 
 == Changelog ==
 
+= 3.0.6 =
+ Thirteen Stable version
+
 = 3.0.5 =
  Twelve Stable version
 
