@@ -3,7 +3,7 @@ Contributors: dotsvijay
 Tags: contact form 7, contact form 7 captcha, captcha, math captcha, contact form 7 addon
 Requires at least: 6.5
 Requires PHP: 7.4
-Tested up to: 6.8
+Tested up to: 6.9
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-23.0.html
@@ -44,6 +44,9 @@ To add the mathcaptcha you can find the tag 'Mathcaptcha' when you will create n
 2. Screenshot-2.png
 
 == Changelog ==
+
+= 3.0.7 =
+ Fourteen Stable version
 
 = 3.0.6 =
  Thirteen Stable version
