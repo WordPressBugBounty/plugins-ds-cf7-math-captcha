@@ -1,95 +1,92 @@
-# Copyright (C) 2025 Dotsquares WPTeam
-# This file is distributed under the GPLv2 or later.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the DS CF7 Math Captcha package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: DS CF7 Math Captcha 3.0.4\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ds-cf7-math-captcha\n"
+"Project-Id-Version: DS CF7 Math Captcha 3.0.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-18 11:58+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-06-03T11:55:59+02:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.10.0\n"
-"X-Domain: ds-cf7-math-captcha\n"
 
-#. Plugin Name of the plugin
-#: D:\xampp\htdocs\clendly\wp-content\plugins\ds-cf7-math-captcha\ds-cf7-math-captcha.php
-msgid "DS CF7 Math Captcha"
+#: ds-cf7-math-captcha.php:68
+msgid "Security check failed."
 msgstr ""
 
-#. Description of the plugin
-#: D:\xampp\htdocs\clendly\wp-content\plugins\ds-cf7-math-captcha\ds-cf7-math-captcha.php
-msgid "To prevent spam emails, adding a math captcha is a useful strategy."
+#: ds-cf7-math-captcha.php:84
+msgid ""
+"Warning: DS CF7 Math Captcha plugin requires Contact Form 7 to be installed "
+"and active."
 msgstr ""
 
-#. Author of the plugin
-#: D:\xampp\htdocs\clendly\wp-content\plugins\ds-cf7-math-captcha\ds-cf7-math-captcha.php
-msgid "Dotsquares WPTeam"
-msgstr ""
-
-#. Author URI of the plugin
-#: D:\xampp\htdocs\clendly\wp-content\plugins\ds-cf7-math-captcha\ds-cf7-math-captcha.php
-msgid "https://www.dotsquares.com"
-msgstr ""
-
-#: ds-cf7-math-captcha.php:90
-msgid "Warning: DS CF7 Math Captcha plugin requires Contact Form 7 to be installed and active."
-msgstr ""
-
-#: ds-cf7-math-captcha.php:109
-#: ds-cf7-math-captcha.php:117
+#: ds-cf7-math-captcha.php:97 ds-cf7-math-captcha.php:105
+#: ds-cf7-math-captcha.php:165
 msgid "Incorrect captcha!"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:113
-#: ds-cf7-math-captcha.php:123
+#: ds-cf7-math-captcha.php:101 ds-cf7-math-captcha.php:111
+#: ds-cf7-math-captcha.php:157
 msgid "Please enter captcha."
 msgstr ""
 
-#: ds-cf7-math-captcha.php:169
+#: ds-cf7-math-captcha.php:134
 msgid "Nonce verification failed. Please try again."
 msgstr ""
 
-#: ds-cf7-math-captcha.php:198
-msgid "Please enter Captcha."
+#: ds-cf7-math-captcha.php:208 ds-cf7-math-captcha.php:298
+#, php-format
+msgid "What is %1$d %2$s %3$d ?"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:204
-msgid "Incorrect Captcha!"
+#: ds-cf7-math-captcha.php:215 ds-cf7-math-captcha.php:305
+#, php-format
+msgid "Answer for %1$d %2$s %3$d"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:262
-#: ds-cf7-math-captcha.php:366
-msgid "What is"
+#: ds-cf7-math-captcha.php:228 ds-cf7-math-captcha.php:318
+msgid "Refresh captcha"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:274
-#: ds-cf7-math-captcha.php:373
+#: ds-cf7-math-captcha.php:229 ds-cf7-math-captcha.php:319
+msgid "Refresh icon"
+msgstr ""
+
+#: ds-cf7-math-captcha.php:230 ds-cf7-math-captcha.php:320
+msgid "Refreshing captcha"
+msgstr ""
+
+#: ds-cf7-math-captcha.php:237 ds-cf7-math-captcha.php:327
 msgid "Type your answer"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:443
-msgid "math-captcha"
+#: ds-cf7-math-captcha.php:349
+msgid "Nonce verification failed"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:463
-msgid "Copy the given shortcode in the form, see %s."
+#: ds-cf7-math-captcha.php:363
+msgid "Math Captcha"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:473
+#: ds-cf7-math-captcha.php:375
+msgid "Copy the given shortcode in the form."
+msgstr ""
+
+#: ds-cf7-math-captcha.php:384
 msgid "Name"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:481
+#: ds-cf7-math-captcha.php:392
 msgid "Class"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:485
-msgid "Enter a custom class for the CAPTCHA field (optional)."
-msgstr ""
-
-#: ds-cf7-math-captcha.php:495
+#: ds-cf7-math-captcha.php:406
 msgid "Insert Tag"
 msgstr ""

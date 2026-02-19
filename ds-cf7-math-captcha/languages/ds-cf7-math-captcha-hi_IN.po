@@ -1,95 +1,61 @@
-# Copyright (C) 2025 Dotsquares WPTeam
-# This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: DS CF7 Math Captcha 3.0.4\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ds-cf7-math-captcha\n"
-"POT-Creation-Date: 2025-06-03T11:55:59+02:00\n"
-"PO-Revision-Date: 2025-06-03 18:05+0530\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: hi\n"
+"Project-Id-Version: DS CF7 Math Captcha 3.0.7\n"
+"POT-Creation-Date: 2026-02-18 00:00+0000\n"
+"PO-Revision-Date: 2026-02-18 00:00+0000\n"
+"Language: hi_IN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.6\n"
-"X-Domain: ds-cf7-math-captcha\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. Plugin Name of the plugin
-#: D:\xampp\htdocs\clendly\wp-content\plugins\ds-cf7-math-captcha\ds-cf7-math-captcha.php
-msgid "DS CF7 Math Captcha"
-msgstr ""
+msgid "Security check failed."
+msgstr "सुरक्षा जांच विफल रही।"
 
-#. Description of the plugin
-#: D:\xampp\htdocs\clendly\wp-content\plugins\ds-cf7-math-captcha\ds-cf7-math-captcha.php
-msgid "To prevent spam emails, adding a math captcha is a useful strategy."
-msgstr "स्पैम ईमेल को रोकने के लिए, गणित कैप्चा जोड़ना एक उपयोगी रणनीति है।"
+msgid "Warning: DS CF7 Math Captcha plugin requires Contact Form 7 to be installed and active."
+msgstr "चेतावनी: DS CF7 Math Captcha प्लगइन के लिए Contact Form 7 का इंस्टॉल और सक्रिय होना आवश्यक है।"
 
-#. Author of the plugin
-#: D:\xampp\htdocs\clendly\wp-content\plugins\ds-cf7-math-captcha\ds-cf7-math-captcha.php
-msgid "Dotsquares WPTeam"
-msgstr "डीएस CF7 गणित कैप्चा"
-
-#. Author URI of the plugin
-#: D:\xampp\htdocs\clendly\wp-content\plugins\ds-cf7-math-captcha\ds-cf7-math-captcha.php
-msgid "https://www.dotsquares.com"
-msgstr ""
-
-#: ds-cf7-math-captcha.php:90
-msgid ""
-"Warning: DS CF7 Math Captcha plugin requires Contact Form 7 to be installed and "
-"active."
-msgstr ""
-"चेतावनी: DS CF7 गणित कैप्चा प्लगइन के लिए संपर्क फ़ॉर्म 7 का इंस्टॉल और सक्रिय होना आवश्यक है।"
-
-#: ds-cf7-math-captcha.php:109 ds-cf7-math-captcha.php:117
 msgid "Incorrect captcha!"
-msgstr "ग़लत कैप्चा!"
+msgstr "कैप्चा गलत है!"
 
-#: ds-cf7-math-captcha.php:113 ds-cf7-math-captcha.php:123
 msgid "Please enter captcha."
-msgstr "कृपया कैप्चा दर्ज करें."
+msgstr "कृपया कैप्चा दर्ज करें।"
 
-#: ds-cf7-math-captcha.php:169
 msgid "Nonce verification failed. Please try again."
-msgstr "नॉन्स सत्यापन विफल हुआ। कृपया पुनः प्रयास करें।"
+msgstr "Nonce सत्यापन विफल रहा। कृपया फिर से प्रयास करें।"
 
-#: ds-cf7-math-captcha.php:198
-msgid "Please enter Captcha."
-msgstr ""
+msgid "What is %1$d %2$s %3$d ?"
+msgstr "%1$d %2$s %3$d कितना है?"
 
-#: ds-cf7-math-captcha.php:204
-msgid "Incorrect Captcha!"
-msgstr "ग़लत कैप्चा!"
+msgid "Answer for %1$d %2$s %3$d"
+msgstr "%1$d %2$s %3$d का उत्तर"
 
-#: ds-cf7-math-captcha.php:262 ds-cf7-math-captcha.php:366
-msgid "What is"
-msgstr "क्या है"
+msgid "Refresh captcha"
+msgstr "कैप्चा रीफ्रेश करें"
 
-#: ds-cf7-math-captcha.php:274 ds-cf7-math-captcha.php:373
+msgid "Refresh icon"
+msgstr "रीफ्रेश आइकन"
+
+msgid "Refreshing captcha"
+msgstr "कैप्चा रीफ्रेश हो रहा है"
+
 msgid "Type your answer"
-msgstr ""
+msgstr "अपना उत्तर लिखें"
 
-#: ds-cf7-math-captcha.php:443
-msgid "math-captcha"
-msgstr ""
+msgid "Nonce verification failed"
+msgstr "Nonce सत्यापन विफल रहा"
 
-#: ds-cf7-math-captcha.php:463
-msgid "Copy the given shortcode in the form, see %s."
-msgstr ""
+msgid "Math Captcha"
+msgstr "गणित कैप्चा"
 
-#: ds-cf7-math-captcha.php:473
+msgid "Copy the given shortcode in the form."
+msgstr "दिया गया शॉर्टकोड फॉर्म में कॉपी करें।"
+
 msgid "Name"
-msgstr ""
+msgstr "नाम"
 
-#: ds-cf7-math-captcha.php:481
 msgid "Class"
-msgstr ""
+msgstr "क्लास"
 
-#: ds-cf7-math-captcha.php:485
-msgid "Enter a custom class for the CAPTCHA field (optional)."
-msgstr ""
-
-#: ds-cf7-math-captcha.php:495
 msgid "Insert Tag"
-msgstr ""
+msgstr "टैग डालें"

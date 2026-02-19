@@ -22,7 +22,7 @@ Text Domain: ds-cf7-math-captcha
 = Features =
  * Math Captcha
  * Refresh Math Captcha
- * Available Translations - English (US), French, Hindi
+ * Available Translations - English (US), French, Hindi, Spanish and German
   
 == Installation ==
 
@@ -44,6 +44,9 @@ To add the mathcaptcha you can find the tag 'Mathcaptcha' when you will create n
 2. Screenshot-2.png
 
 == Changelog ==
+
+= 3.1.0 =
+ Fifteen Stable version
 
 = 3.0.7 =
  Fourteen Stable version

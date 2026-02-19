@@ -3,59 +3,59 @@ msgstr ""
 "Project-Id-Version: DS CF7 Math Captcha 3.0.7\n"
 "POT-Creation-Date: 2026-02-18 00:00+0000\n"
 "PO-Revision-Date: 2026-02-18 00:00+0000\n"
-"Language: fr_FR\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Security check failed."
-msgstr "Echec de la verification de securite."
+msgstr "La verificacion de seguridad fallo."
 
 msgid "Warning: DS CF7 Math Captcha plugin requires Contact Form 7 to be installed and active."
-msgstr "Avertissement : le plugin DS CF7 Math Captcha necessite Contact Form 7 installe et actif."
+msgstr "Aviso: el plugin DS CF7 Math Captcha requiere Contact Form 7 instalado y activo."
 
 msgid "Incorrect captcha!"
-msgstr "Captcha incorrect !"
+msgstr "Captcha incorrecto!"
 
 msgid "Please enter captcha."
-msgstr "Veuillez saisir le captcha."
+msgstr "Por favor, introduce el captcha."
 
 msgid "Nonce verification failed. Please try again."
-msgstr "La verification nonce a echoue. Veuillez reessayer."
+msgstr "La verificacion del nonce fallo. Intentalo de nuevo."
 
 msgid "What is %1$d %2$s %3$d ?"
-msgstr "Combien font %1$d %2$s %3$d ?"
+msgstr "Cuanto es %1$d %2$s %3$d ?"
 
 msgid "Answer for %1$d %2$s %3$d"
-msgstr "Reponse pour %1$d %2$s %3$d"
+msgstr "Respuesta para %1$d %2$s %3$d"
 
 msgid "Refresh captcha"
-msgstr "Actualiser le captcha"
+msgstr "Actualizar captcha"
 
 msgid "Refresh icon"
-msgstr "Icone d actualisation"
+msgstr "Icono de actualizar"
 
 msgid "Refreshing captcha"
-msgstr "Actualisation du captcha"
+msgstr "Actualizando captcha"
 
 msgid "Type your answer"
-msgstr "Saisissez votre reponse"
+msgstr "Escribe tu respuesta"
 
 msgid "Nonce verification failed"
-msgstr "La verification nonce a echoue"
+msgstr "La verificacion del nonce fallo"
 
 msgid "Math Captcha"
-msgstr "Captcha mathematique"
+msgstr "Captcha matematico"
 
 msgid "Copy the given shortcode in the form."
-msgstr "Copiez le shortcode fourni dans le formulaire."
+msgstr "Copia el shortcode proporcionado en el formulario."
 
 msgid "Name"
-msgstr "Nom"
+msgstr "Nombre"
 
 msgid "Class"
-msgstr "Classe"
+msgstr "Clase"
 
 msgid "Insert Tag"
-msgstr "Inserer la balise"
+msgstr "Insertar etiqueta"
