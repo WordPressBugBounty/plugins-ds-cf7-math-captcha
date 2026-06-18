@@ -3,7 +3,7 @@ Contributors: dotsvijay
 Tags: contact form 7, contact form 7 captcha, captcha, math captcha, contact form 7 addon
 Requires at least: 6.5
 Requires PHP: 7.4
-Tested up to: 6.9
+Tested up to: 7.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-23.0.html
@@ -42,8 +42,16 @@ To add the mathcaptcha you can find the tag 'Mathcaptcha' when you will create n
 
 1. Screenshot-1.png
 2. Screenshot-2.png
+3. Screenshot-3.png
 
 == Changelog ==
+
+= 3.2.0 =
+
+ Sixteen Stable version
+ * Security: replaced client-side hidden math fields with a server-signed HMAC token. The answer is never sent to the browser, eliminating tampering and bot bypass.
+ * Added token expiration (10 minutes) and one-time-use replay protection (transient based, no database tables).
+ * Replaced the plain-text question with a lightweight inline image while keeping it easy for humans to read.  
 
 = 3.1.0 =
  Fifteen Stable version

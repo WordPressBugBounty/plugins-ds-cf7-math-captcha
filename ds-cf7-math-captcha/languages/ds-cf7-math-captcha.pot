@@ -1,92 +1,117 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the DS CF7 Math Captcha package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Copyright (C) 2026 Dotsquares WPTeam
+# This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: DS CF7 Math Captcha 3.0.7\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-18 11:58+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Project-Id-Version: DS CF7 Math Captcha 3.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ds-cf7-math-captcha\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-06-08T06:55:37+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: ds-cf7-math-captcha\n"
 
-#: ds-cf7-math-captcha.php:68
+#. Plugin Name of the plugin
+#: ds-cf7-math-captcha.php
+msgid "DS CF7 Math Captcha"
+msgstr ""
+
+#. Description of the plugin
+#: ds-cf7-math-captcha.php
+msgid "Protect Contact Form 7 forms from spam with a lightweight math captcha, AJAX refresh support, and multilingual compatibility."
+msgstr ""
+
+#. Author of the plugin
+#: ds-cf7-math-captcha.php
+msgid "Dotsquares WPTeam"
+msgstr ""
+
+#. Author URI of the plugin
+#: ds-cf7-math-captcha.php
+msgid "https://www.dotsquares.com"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php:57
 msgid "Security check failed."
 msgstr ""
 
-#: ds-cf7-math-captcha.php:84
-msgid ""
-"Warning: DS CF7 Math Captcha plugin requires Contact Form 7 to be installed "
-"and active."
+#: includes/class-dscf7-math-captcha-admin.php:78
+msgid "Warning: DS CF7 Math Captcha plugin requires Contact Form 7 to be installed and active."
 msgstr ""
 
-#: ds-cf7-math-captcha.php:97 ds-cf7-math-captcha.php:105
-#: ds-cf7-math-captcha.php:165
+#: includes/class-dscf7-math-captcha-admin.php:97
+#: includes/class-dscf7-math-captcha-frontend.php:403
 msgid "Incorrect captcha!"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:101 ds-cf7-math-captcha.php:111
-#: ds-cf7-math-captcha.php:157
+#: includes/class-dscf7-math-captcha-admin.php:98
+#: includes/class-dscf7-math-captcha-frontend.php:366
 msgid "Please enter captcha."
 msgstr ""
 
-#: ds-cf7-math-captcha.php:134
-msgid "Nonce verification failed. Please try again."
+#: includes/class-dscf7-math-captcha-admin.php:132
+#: includes/class-dscf7-math-captcha-admin.php:133
+#: includes/class-dscf7-math-captcha-frontend.php:377
+#: includes/class-dscf7-math-captcha-frontend.php:387
+#: includes/class-dscf7-math-captcha-frontend.php:394
+msgid "Captcha expired. Please refresh and try again."
 msgstr ""
 
-#: ds-cf7-math-captcha.php:208 ds-cf7-math-captcha.php:298
+#: includes/class-dscf7-math-captcha-admin.php:168
+msgid "Math Captcha"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php:192
+msgid "Copy the given shortcode in the form."
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php:201
+msgid "Name"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php:209
+msgid "Class"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php:223
+msgid "Insert Tag"
+msgstr ""
+
+#. translators: 1: First number, 2: math operator symbol, 3: second number.
+#: includes/class-dscf7-math-captcha-frontend.php:147
 #, php-format
 msgid "What is %1$d %2$s %3$d ?"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:215 ds-cf7-math-captcha.php:305
-#, php-format
-msgid "Answer for %1$d %2$s %3$d"
+#: includes/class-dscf7-math-captcha-frontend.php:264
+msgid "Type the answer to the math question shown above"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:228 ds-cf7-math-captcha.php:318
+#. translators: %s: the math problem (numbers and operator) shown as an image.
+#: includes/class-dscf7-math-captcha-frontend.php:272
+#, php-format
+msgid "What is %s"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-frontend.php:288
 msgid "Refresh captcha"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:229 ds-cf7-math-captcha.php:319
+#: includes/class-dscf7-math-captcha-frontend.php:289
 msgid "Refresh icon"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:230 ds-cf7-math-captcha.php:320
+#: includes/class-dscf7-math-captcha-frontend.php:290
 msgid "Refreshing captcha"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:237 ds-cf7-math-captcha.php:327
+#: includes/class-dscf7-math-captcha-frontend.php:298
 msgid "Type your answer"
 msgstr ""
 
-#: ds-cf7-math-captcha.php:349
+#: includes/class-dscf7-math-captcha-frontend.php:456
 msgid "Nonce verification failed"
-msgstr ""
-
-#: ds-cf7-math-captcha.php:363
-msgid "Math Captcha"
-msgstr ""
-
-#: ds-cf7-math-captcha.php:375
-msgid "Copy the given shortcode in the form."
-msgstr ""
-
-#: ds-cf7-math-captcha.php:384
-msgid "Name"
-msgstr ""
-
-#: ds-cf7-math-captcha.php:392
-msgid "Class"
-msgstr ""
-
-#: ds-cf7-math-captcha.php:406
-msgid "Insert Tag"
 msgstr ""

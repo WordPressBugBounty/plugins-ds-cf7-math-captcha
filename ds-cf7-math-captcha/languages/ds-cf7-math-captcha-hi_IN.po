@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DS CF7 Math Captcha 3.0.7\n"
-"POT-Creation-Date: 2026-02-18 00:00+0000\n"
-"PO-Revision-Date: 2026-02-18 00:00+0000\n"
+"Project-Id-Version: DS CF7 Math Captcha 3.2.0\n"
+"POT-Creation-Date: 2026-06-08 00:00+0000\n"
+"PO-Revision-Date: 2026-06-08 00:00+0000\n"
 "Language: hi_IN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,6 +26,9 @@ msgstr "Nonce सत्यापन विफल रहा। कृपया �
 
 msgid "What is %1$d %2$s %3$d ?"
 msgstr "%1$d %2$s %3$d कितना है?"
+
+msgid "What is %s"
+msgstr "%s कितना है"
 
 msgid "Answer for %1$d %2$s %3$d"
 msgstr "%1$d %2$s %3$d का उत्तर"
@@ -59,3 +62,9 @@ msgstr "क्लास"
 
 msgid "Insert Tag"
 msgstr "टैग डालें"
+
+msgid "Captcha expired. Please refresh and try again."
+msgstr "कैप्चा समाप्त हो गया। कृपया रीफ्रेश करके पुनः प्रयास करें।"
+
+msgid "Type the answer to the math question shown above"
+msgstr "ऊपर दिखाए गए गणित प्रश्न का उत्तर लिखें"

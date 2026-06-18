@@ -126,6 +126,12 @@ class DSCF7_Math_Captcha_Admin {
 					'default'     => $please_enter_capthca,
 				);
 			}
+
+			// Message shown when the signed captcha token is missing or expired.
+			$messages['dscf7_captcha_expired'] = array(
+				'description' => esc_html__( 'Captcha expired. Please refresh and try again.', 'ds-cf7-math-captcha' ),
+				'default'     => esc_html__( 'Captcha expired. Please refresh and try again.', 'ds-cf7-math-captcha' ),
+			);
 		}
 
 		return $messages;

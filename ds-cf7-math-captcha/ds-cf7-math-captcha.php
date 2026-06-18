@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: DS CF7 Math Captcha
-Version: 3.1.0
+Version: 3.2.0
 Author: Dotsquares WPTeam
 Author URI: https://www.dotsquares.com
 Description: Protect Contact Form 7 forms from spam with a lightweight math captcha, AJAX refresh support, and multilingual compatibility.
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DSCF7_VERSION', '3.1.0' );
+define( 'DSCF7_VERSION', '3.2.0' );
 define( 'DSCF7_REQUIRED_WP_VERSION', '6.5' );
 define( 'DSCF7_PLUGIN', __FILE__ );
 define( 'DSCF7_PLUGIN_BASENAME', plugin_basename( DSCF7_PLUGIN ) );

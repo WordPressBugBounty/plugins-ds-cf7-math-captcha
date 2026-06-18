@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DS CF7 Math Captcha 3.0.7\n"
-"POT-Creation-Date: 2026-02-18 00:00+0000\n"
-"PO-Revision-Date: 2026-02-18 00:00+0000\n"
+"Project-Id-Version: DS CF7 Math Captcha 3.2.0\n"
+"POT-Creation-Date: 2026-06-08 00:00+0000\n"
+"PO-Revision-Date: 2026-06-08 00:00+0000\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,6 +26,9 @@ msgstr "La verificacion del nonce fallo. Intentalo de nuevo."
 
 msgid "What is %1$d %2$s %3$d ?"
 msgstr "Cuanto es %1$d %2$s %3$d ?"
+
+msgid "What is %s"
+msgstr "Cuanto es %s"
 
 msgid "Answer for %1$d %2$s %3$d"
 msgstr "Respuesta para %1$d %2$s %3$d"
@@ -59,3 +62,9 @@ msgstr "Clase"
 
 msgid "Insert Tag"
 msgstr "Insertar etiqueta"
+
+msgid "Captcha expired. Please refresh and try again."
+msgstr "El captcha ha caducado. Actualizalo e intentalo de nuevo."
+
+msgid "Type the answer to the math question shown above"
+msgstr "Escribe la respuesta a la pregunta matematica mostrada arriba"
