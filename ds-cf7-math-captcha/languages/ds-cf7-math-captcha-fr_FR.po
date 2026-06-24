@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DS CF7 Math Captcha 3.2.0\n"
+"Project-Id-Version: DS CF7 Math Captcha 3.4.0\n"
 "POT-Creation-Date: 2026-06-08 00:00+0000\n"
 "PO-Revision-Date: 2026-06-08 00:00+0000\n"
 "Language: fr_FR\n"
@@ -68,3 +68,24 @@ msgstr "Captcha expire. Veuillez l actualiser et reessayer."
 
 msgid "Type the answer to the math question shown above"
 msgstr "Saisissez la reponse a la question mathematique affichee ci-dessus"
+
+msgid "Leave this field empty"
+msgstr "Laissez ce champ vide"
+
+msgid "Math captcha image"
+msgstr "Image du captcha mathematique"
+
+msgid "Solve the math problem shown in the image to continue."
+msgstr "Resolvez le probleme mathematique affiche dans l image pour continuer."
+
+msgid "What is double of %s ?"
+msgstr "Quel est le double de %s ?"
+
+msgid "What is half of %s ?"
+msgstr "Quelle est la moitie de %s ?"
+
+msgid "What is the number after %s ?"
+msgstr "Quel est le nombre apres %s ?"
+
+msgid "What is the number before %s ?"
+msgstr "Quel est le nombre avant %s ?"

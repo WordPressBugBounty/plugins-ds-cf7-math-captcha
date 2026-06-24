@@ -33,6 +33,13 @@ class DSCF7_Math_Captcha {
 	public $admin;
 
 	/**
+	 * Security / anti-spam handler.
+	 *
+	 * @var DSCF7_Math_Captcha_Security
+	 */
+	public $security;
+
+	/**
 	 * Get singleton instance.
 	 *
 	 * @return DSCF7_Math_Captcha
@@ -49,6 +56,7 @@ class DSCF7_Math_Captcha {
 	 * Constructor.
 	 */
 	private function __construct() {
+		$this->security = new DSCF7_Math_Captcha_Security( $this );
 		$this->frontend = new DSCF7_Math_Captcha_Frontend( $this );
 		$this->admin    = new DSCF7_Math_Captcha_Admin( $this );
 
@@ -63,6 +71,7 @@ class DSCF7_Math_Captcha {
 	private function register_hooks() {
 		add_action( 'init', 'dscf7_load_textdomain', 1 );
 
+		$this->security->register_hooks();
 		$this->frontend->register_hooks();
 		$this->admin->register_hooks();
 	}

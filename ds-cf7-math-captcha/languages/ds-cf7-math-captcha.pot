@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: DS CF7 Math Captcha 3.2.0\n"
+"Project-Id-Version: DS CF7 Math Captcha 3.5.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ds-cf7-math-captcha\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,24 +80,126 @@ msgstr ""
 msgid "Insert Tag"
 msgstr ""
 
-#. translators: 1: First number, 2: math operator symbol, 3: second number.
-#: includes/class-dscf7-math-captcha-frontend.php:147
-#, php-format
-msgid "What is %1$d %2$s %3$d ?"
-msgstr ""
-
-#: includes/class-dscf7-math-captcha-frontend.php:264
+#: includes/class-dscf7-math-captcha-frontend.php
 msgid "Type the answer to the math question shown above"
 msgstr ""
 
 #. translators: %s: the math problem (numbers and operator) shown as an image.
-#: includes/class-dscf7-math-captcha-frontend.php:272
+#: includes/class-dscf7-math-captcha-frontend.php
 #, php-format
 msgid "What is %s"
 msgstr ""
 
+#. translators: %s: a number shown as an image.
+#: includes/class-dscf7-math-captcha-frontend.php
+#, php-format
+msgid "What is double of %s ?"
+msgstr ""
+
+#. translators: %s: a number shown as an image.
+#: includes/class-dscf7-math-captcha-frontend.php
+#, php-format
+msgid "What is half of %s ?"
+msgstr ""
+
+#. translators: %s: a number shown as an image.
+#: includes/class-dscf7-math-captcha-frontend.php
+#, php-format
+msgid "What is the number after %s ?"
+msgstr ""
+
+#. translators: %s: a number shown as an image.
+#: includes/class-dscf7-math-captcha-frontend.php
+#, php-format
+msgid "What is the number before %s ?"
+msgstr ""
+
 #: includes/class-dscf7-math-captcha-frontend.php:288
 msgid "Refresh captcha"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-frontend.php
+msgid "Leave this field empty"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-frontend.php
+msgid "Math captcha image"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-frontend.php
+msgid "Solve the math problem shown in the image to continue."
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "DS Math Captcha"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Choose how the math captcha looks and how difficult the questions are. Changes apply to every Contact Form 7 form that uses the captcha."
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Captcha style"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Border color"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Pick a visual theme. The preview updates instantly."
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Classic"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Dark"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Bordered"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Difficulty level"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Controls the numbers and operations used in the questions."
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Easy"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Addition & subtraction, numbers 1–5."
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Medium"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Addition, subtraction & multiplication, numbers 1–9."
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Hard"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Larger numbers (up to 50) and multiplication tables."
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Live preview"
+msgstr ""
+
+#: includes/class-dscf7-math-captcha-admin.php
+msgid "Preview is for appearance only and is not interactive."
 msgstr ""
 
 #: includes/class-dscf7-math-captcha-frontend.php:289

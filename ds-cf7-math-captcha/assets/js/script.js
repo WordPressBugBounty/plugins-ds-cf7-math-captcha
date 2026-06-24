@@ -1,6 +1,30 @@
 (function ($) {
 	"use strict";
 
+	// Base classes added to the answer input by the server; everything left
+	// after stripping these is treated as the user's custom class.
+	var BASE_CLASSES = [
+		"wpcf7-form-control",
+		"wpcf7-text",
+		"dscf7_answer",
+		"wpcf7-validates-as-required"
+	];
+
+	/**
+	 * Recover the user's custom classes from the answer input's class list.
+	 *
+	 * @param {jQuery} $answer The answer input.
+	 * @returns {string}
+	 */
+	function customClassOf($answer) {
+		return ($answer.attr("class") || "")
+			.split(/\s+/)
+			.filter(function (cls) {
+				return cls.length > 0 && BASE_CLASSES.indexOf(cls) === -1;
+			})
+			.join(" ");
+	}
+
 	/**
 	 * Refresh a single captcha block via AJAX.
 	 *
@@ -10,11 +34,9 @@
 	function refreshCaptcha($link, spinner) {
 		var $container = $link.closest(".dscf7-captcha-container");
 		var tagName = $link.attr("id");
-		var $answer = $container.find('input[type="text"][name="' + tagName + '"]');
-		var customClass = ($answer.attr("class") || "")
-			.replace("wpcf7-form-control wpcf7-text wpcf7-validates-as-required", "")
-			.replace("wpcf7-form-control wpcf7-text", "")
-			.trim();
+		// The answer input is located by its stable class, not its (randomized) name.
+		var $answer = $container.find("input.dscf7_answer");
+		var customClass = customClassOf($answer);
 
 		$.ajax({
 			type: "POST",
@@ -38,6 +60,7 @@
 				}
 
 				var $new = $("<div>").html(response);
+				var $newAnswer = $new.find("input.dscf7_answer");
 
 				// Swap the SVG question, the signed token, the nonce and the label.
 				$container.find(".dscf7_svg_wrap").html($new.find(".dscf7_svg_wrap").html());
@@ -45,10 +68,19 @@
 				$container.find('input[name="ds_cf7_nonce"]').val($new.find('input[name="ds_cf7_nonce"]').val());
 				$container.find("label.screen-reader-text").text($new.find("label.screen-reader-text").text());
 
-				// Sync answer-input id / aria-label and clear it.
-				var newId = $new.find('input[type="text"]').attr("id");
-				var newAria = $new.find('input[type="text"]').attr("aria-label");
-				$answer.attr("id", newId).attr("aria-label", newAria).val("");
+				// Sync the randomized name/id and the aria-label onto the answer
+				// input, point the label at the new id, and clear the value.
+				var newName = $newAnswer.attr("name");
+				var newId = $newAnswer.attr("id");
+				var newAria = $newAnswer.attr("aria-label");
+				if (newName) {
+					$answer.attr("name", newName);
+				}
+				if (newId) {
+					$answer.attr("id", newId);
+					$container.find("label.screen-reader-text").attr("for", newId);
+				}
+				$answer.attr("aria-label", newAria).val("");
 			},
 			error: function () {
 				window.alert("Failed to refresh CAPTCHA. Please try again later.");
@@ -78,6 +110,29 @@
 		$tagField.val(base + classes + "]");
 	}
 
+	/**
+	 * Human-interaction detection. On the first genuine mouse, touch or key
+	 * event, flag every captcha block as "interacted". Degrades gracefully:
+	 * with JS off the flag stays "0" and enforcement is opt-in server-side, so
+	 * accessibility tools and no-JS users are never blocked by default.
+	 */
+	function bindInteraction() {
+		var marked = false;
+		function mark() {
+			if (marked) {
+				return;
+			}
+			marked = true;
+			$(".dscf7_interaction").val("1");
+			document.removeEventListener("mousemove", mark, true);
+			document.removeEventListener("touchstart", mark, true);
+			document.removeEventListener("keydown", mark, true);
+		}
+		document.addEventListener("mousemove", mark, true);
+		document.addEventListener("touchstart", mark, true);
+		document.addEventListener("keydown", mark, true);
+	}
+
 	// Manual refresh click.
 	$(document).on("click", ".dscf7_refresh_captcha", function (e) {
 		e.preventDefault();
@@ -92,6 +147,8 @@
 	}, false);
 
 	$(document).ready(function () {
+		bindInteraction();
+
 		// Optional: mint a per-visitor token on cached pages.
 		$(".dscf7-captcha-container[data-dscf7-refresh-on-load]").each(function () {
 			var $link = $(this).find(".dscf7_refresh_captcha").first();

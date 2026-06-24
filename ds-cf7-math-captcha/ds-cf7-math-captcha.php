@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: DS CF7 Math Captcha
-Version: 3.2.0
+Version: 4.0
 Author: Dotsquares WPTeam
 Author URI: https://www.dotsquares.com
 Description: Protect Contact Form 7 forms from spam with a lightweight math captcha, AJAX refresh support, and multilingual compatibility.
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DSCF7_VERSION', '3.2.0' );
+define( 'DSCF7_VERSION', '4.0' );
 define( 'DSCF7_REQUIRED_WP_VERSION', '6.5' );
 define( 'DSCF7_PLUGIN', __FILE__ );
 define( 'DSCF7_PLUGIN_BASENAME', plugin_basename( DSCF7_PLUGIN ) );
@@ -24,6 +24,7 @@ define( 'DSCF7_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'DSCF7_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 require_once DSCF7_PLUGIN_DIR . 'includes/class-dscf7-math-captcha.php';
+require_once DSCF7_PLUGIN_DIR . 'includes/class-dscf7-math-captcha-security.php';
 require_once DSCF7_PLUGIN_DIR . 'includes/class-dscf7-math-captcha-frontend.php';
 require_once DSCF7_PLUGIN_DIR . 'includes/class-dscf7-math-captcha-admin.php';
 
@@ -77,6 +78,18 @@ function dscf7_admin_style() {
 	dscf7_math_captcha()->admin->admin_style();
 }
 
+function dscf7_admin_menu() {
+	dscf7_math_captcha()->admin->add_settings_page();
+}
+
+function dscf7_register_settings() {
+	dscf7_math_captcha()->admin->register_settings();
+}
+
+function dscf7_settings_assets( $hook = '' ) {
+	dscf7_math_captcha()->admin->settings_assets( $hook );
+}
+
 function dscf7_refreshcaptcha_callback( $tag = '' ) {
 	dscf7_math_captcha()->frontend->refreshcaptcha_callback( $tag );
 }
@@ -87,4 +100,8 @@ function dscf7_wpcf7_add_tag_generator_dsmathcaptcha() {
 
 function dscf7_wpcf7_tag_generator_dsmathcaptcha( $contact_form, $args = '' ) {
 	dscf7_math_captcha()->admin->tag_generator_dsmathcaptcha( $contact_form, $args );
+}
+
+function dscf7_spam_check( $spam, $submission = null ) {
+	return dscf7_math_captcha()->security->spam_check( $spam, $submission );
 }

@@ -17,7 +17,7 @@ Text Domain: ds-cf7-math-captcha
 
 "DS CF7 Math Captcha" plugin gives functionality of prevent unwanted spam to your contact form 7. Contact Form 7 plugin is most widely used by many users so this plugin helps to prevent unwanted spam from website that has been created by Contact Form 7 plugin. This plugin is very much effective to stop form spam for Contact Form 7 plugin.
 
-= The plugin has been tested with the latest version (6.1) of Contact Form 7 =
+= The plugin has been tested with the latest version 6.1 of Contact Form 7 =
 
 = Features =
  * Math Captcha
@@ -40,11 +40,23 @@ To add the mathcaptcha you can find the tag 'Mathcaptcha' when you will create n
 
 == Screenshots ==
 
-1. Screenshot-1.png
-2. Screenshot-2.png
-3. Screenshot-3.png
+1. Adding the Math Captcha tag from the Contact Form 7 form editor.
+2. Inserting the Math Captcha shortcode using the tag generator.
+3. Math Captcha with refresh option displayed on the front-end form.
 
 == Changelog ==
+
+= 4.0.0 =
+
+ Major security and performance update.
+ * Stronger protection against spam bots, automated submissions, and captcha bypass attempts.
+ * New modern captcha styles with live preview and customization options.
+ * Added Easy, Medium, and Hard difficulty levels to match your website's security needs.
+ * Improved user experience while maintaining strong spam protection.
+ * Enhanced accessibility support and compatibility with Contact Form 7.
+ * Faster, lighter, and more reliable captcha validation.
+ * No external services, tracking, cookies, or third-party dependencies required.
+ * Improved overall plugin stability, security, and performance.
 
 = 3.2.0 =
 
